@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [](https://github.com/sirbiel100/Rock-Paper-Scissors)
+- Live Site URL: [](https://rock-paper-scissors-five-zeta.vercel.app)
 
 ## My process
 
