@@ -1,0 +1,42 @@
+.house-pick
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 8em
+
+    & > div
+        display: flex
+        flex-direction: column-reverse
+        align-items: center
+        gap: 2em
+
+        p
+            font-size: clamp(1.5em, 1.5em + 1vw, 2.5em)
+            font-weight: 600
+            color: #ffffff
+
+        .house-pick-placeholder
+            position: relative
+            --placeholder-size: clamp(8em, 8em + 8vw, 20em)
+            width: var(--placeholder-size)
+            height: var(--placeholder-size)
+            padding: 4em
+            border-radius: 50%
+
+            &::after
+                content: ""
+                position: absolute
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+                width: 75%
+                height: 75%
+                border-radius: 50%
+                background: #00000055
+
+@media screen and (min-width: 62em)
+    .house-pick
+        gap: 12em
+        & > div
+            flex-direction: column
+            gap: 8em

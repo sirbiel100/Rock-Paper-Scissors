@@ -1,0 +1,24 @@
+.player-choice
+    display: grid
+    place-items: center
+    place-content: center
+    position: relative
+    grid-template-areas: "paper scissors" "rock rock"
+    row-gap: 3em
+    column-gap: 8em
+
+    .triangle
+        position: absolute
+        top: 50%
+        left: 50%
+        width: calc( clamp(8em, 8em + 8vw, 18em) * 2 )
+        height: auto
+        transform: translate(-50%, -50%)
+        z-index: -1
+
+    main:nth-of-type(1)
+        grid-area: rock
+    main:nth-of-type(2)
+        grid-area: paper
+    main:nth-of-type(3)
+        grid-area: scissors

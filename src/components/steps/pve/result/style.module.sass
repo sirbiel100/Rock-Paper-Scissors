@@ -1,0 +1,62 @@
+@use "../../../../app/variables" as *
+
+.result
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 6em
+    padding: 2em 0
+
+    & > div:not(.play-again)
+        display: flex
+        flex-direction: column-reverse
+        align-items: center
+        gap: 2em
+
+        p
+            font-size: clamp(1.5em, 1.5em + 1vw, 2.5em)
+            font-weight: 600
+            color: #ffffff
+
+    .play-again
+        position: absolute
+        bottom: 15%
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 2em
+
+        h2
+            font-size: clamp(2em, 2em + 2vw, 4em)
+            font-weight: 700
+            color: #ffffff
+
+        button
+            background: #fff
+            color: $Dark_Text
+            font-weight: 700
+            border: none
+            border-radius: .6em
+            padding: 1em 4em
+
+@media screen and (min-width: 62em)
+    .result
+        flex-direction: row
+
+        & > div:not(.play-again)
+            flex-direction: column
+            gap: 8em
+
+        .play-again
+            position: static
+            transform: none
+
+
+@media screen and (hover: hover) and (pointer: fine)
+    .result
+        & > div
+            button:hover
+                cursor: pointer
+                color: #dd405d

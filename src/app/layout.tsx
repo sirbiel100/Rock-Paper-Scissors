@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Barlow_Semi_Condensed } from "next/font/google";
+import "./globals.sass";
+import ContextProvider from "@/context/provider";
+import { Suspense } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const barlowSemiCondensed = Barlow_Semi_Condensed({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  weight: ["600", "700"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,8 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={barlowSemiCondensed.className}>
+        <ContextProvider>
+          <Suspense>
+            {children}
+          </Suspense>
+        </ContextProvider>
       </body>
     </html>
   );
